@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+
+    <string name="app_label">Book Store</string>
+
+    <!-- Label for overflow menu option that inserts fake book data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <!-- Label for overflow menu option that deletes all book data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Books</string>
+
+    <!-- Title for the activity to add a new book [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_book">Add a Book</string>
+
+    <!-- Label for editor menu option to save book and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current book [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="category_overview">About Book</string>
+
+    <!-- Label for book type in the editor [CHAR LIMIT=30] -->
+    <string name="category_type">Type of Book</string>
+
+    <!-- Text hint for title field in the editor[CHAR LIMIT=30] -->
+    <string name="hint_book_title">Title</string>
+
+    <!-- Text hint for author field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_book_author">Author</string>
+
+    <!-- Text hint for price field [CHAR LIMIT=30] -->
+    <string name="hint_book_price">Price</string>
+
+    <!-- Label for supplier information in the editor [CHAR LIMIT=30] -->
+    <string name="category_information">Supplier Information</string>
+
+    <!-- Text hint for quantity (number in stock?) field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_quantity">Number in Stock</string>
+
+    <!-- Text hint for supplier name [CHAR LIMIT=30] -->
+    <string name="hint_supplier_name">Supplier Name</string>
+
+    <!-- Text hint for supplier phone number [CHAR LIMIT=12] -->
+    <string name="hint_supplier_number">Supplier Phone Number</string>
+
+    <!-- Label for dropdown menu option if the book's type is unknown [CHAR LIMIT=20] -->
+    <string name="type_unknown">Unknown</string>
+
+    <!-- Label for dropdown menu option if the book has a hardcover [CHAR LIMIT=20] -->
+    <string name="type_hardcover">Hardcover</string>
+
+    <!-- Label for dropdown menu option if the book is a paperback [CHAR LIMIT=20] -->
+    <string name="type_paperback">Paperback</string>
+
+    <!-- Toast if insertBook() was successful -->
+    <string name="toast_success">Book saved with id: 1</string>
+
+    <!-- Toast if insertBook() was unsuccessful -->
+    <string name="toast_fail">Error with saving book</string>
+</resources>
