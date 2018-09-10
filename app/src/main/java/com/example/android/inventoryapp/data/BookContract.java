@@ -22,7 +22,7 @@ public final class BookContract {
         public final static String COLUMN_BOOK_TITLE = "title"; // Type: TEXT NOT NULL
         public final static String COLUMN_BOOK_AUTHOR = "author"; // Type: TEXT NOT NULL
         public final static String COLUMN_BOOK_PRICE = "price"; // Type: DOUBLE
-        public final static String COLUMN_BOOK_TYPE = "book_type"; // Type: INTEGER NOT NULL
+        public final static String COLUMN_BOOK_TYPE = "type"; // Type: INTEGER NOT NULL
         public final static String COLUMN_BOOK_QUANTITY = "quantity"; // Type: INTEGER NOT NULL DEFAULT 0
         public final static String COLUMN_BOOK_SUPPLIER_NAME = "supplier"; // Type: TEXT
         public final static String COLUMN_BOOK_SUPPLIER_NUMBER = "number"; // Type: TEXT
