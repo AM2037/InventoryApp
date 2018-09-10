@@ -83,9 +83,6 @@ public class CatalogActivity extends AppCompatActivity {
                 null,
                 null,
                 null,
-                null,
-                null,
-                null,
                 null);
 
         TextView displayView = findViewById(R.id.text_view_book);
