@@ -78,7 +78,7 @@ public class CatalogActivity extends AppCompatActivity {
 
         Cursor cursor = db.query(
                 BookEntry.TABLE_NAME,
-                projection,
+                null,
                 null,
                 null,
                 null,
@@ -90,7 +90,7 @@ public class CatalogActivity extends AppCompatActivity {
         try {
             // Create header textview that resembles:
             // The books table contains the <number of rows in Cursor> books.
-            // _id -- title -- author -- price -- type -- quantity -- supplier -- number
+            // _id - title - author - price - type - quantity - supplier - number
 
             // Iterate through cursor rows with while loop to display info from columns
             displayView.setText("This books table contains " + cursor.getCount() + " books.\n\n");

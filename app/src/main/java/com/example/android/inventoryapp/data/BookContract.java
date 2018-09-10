@@ -21,7 +21,7 @@ public final class BookContract {
         public final static String _ID = BaseColumns._ID; // Type: INTEGER PRIMARY KEY AUTOINCREMENT
         public final static String COLUMN_BOOK_TITLE = "title"; // Type: TEXT NOT NULL
         public final static String COLUMN_BOOK_AUTHOR = "author"; // Type: TEXT NOT NULL
-        public final static String COLUMN_BOOK_PRICE = "price"; // Type: DOUBLE
+        public final static String COLUMN_BOOK_PRICE = "price"; // Type: DOUBLE changed to real
         public final static String COLUMN_BOOK_TYPE = "type"; // Type: INTEGER NOT NULL
         public final static String COLUMN_BOOK_QUANTITY = "quantity"; // Type: INTEGER NOT NULL DEFAULT 0
         public final static String COLUMN_BOOK_SUPPLIER_NAME = "supplier"; // Type: TEXT

@@ -38,12 +38,12 @@ public class BookDbHelper extends SQLiteOpenHelper {
         String SQL_CREATE_BOOKS_TABLE = "CREATE TABLE " + BookEntry.TABLE_NAME + " ("
                 + BookEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + BookEntry.COLUMN_BOOK_TITLE + " TEXT NOT NULL, "
-                + BookEntry.COLUMN_BOOK_AUTHOR + " TEXT, "
-                + BookEntry.COLUMN_BOOK_PRICE + " DOUBLE, "
+                + BookEntry.COLUMN_BOOK_AUTHOR + " TEXT NOT NULL, "
+                + BookEntry.COLUMN_BOOK_PRICE + " DOUBLE NOT NULL DEFAULT 0, "
                 + BookEntry.COLUMN_BOOK_TYPE + " INTEGER NOT NULL, "
                 + BookEntry.COLUMN_BOOK_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
                 + BookEntry.COLUMN_BOOK_SUPPLIER_NAME + " TEXT, "
-                + BookEntry.COLUMN_BOOK_SUPPLIER_NUMBER + " TEXT);";
+                + BookEntry.COLUMN_BOOK_SUPPLIER_NUMBER + " TEXT)";
 
         // Execute SQL statement
         db.execSQL(SQL_CREATE_BOOKS_TABLE);
@@ -53,5 +53,9 @@ public class BookDbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Do nothing here since version is still at 1
+    }
+
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
     }
 }
