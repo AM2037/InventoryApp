@@ -9,7 +9,7 @@
     android:padding="@dimen/activity_margin"
     tools:context=".MainActivity">
 
-    <!-- Overview category -->
+    <!-- Book information category -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_overview"
+            android:text="@string/category_about"
             style="@style/CategoryStyle" />
 
         <!-- Input fields -->
@@ -53,7 +53,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Gender category -->
+    <!-- Book Type category -->
     <LinearLayout
         android:id="@+id/container_type"
         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
             android:layout_weight="2"
             android:orientation="vertical">
 
-            <!-- Gender drop-down spinner -->
+            <!-- Book Type drop-down spinner -->
             <Spinner
                 android:id="@+id/spinner_type"
                 android:layout_height="@dimen/spinner_height"

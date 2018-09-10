@@ -19,7 +19,7 @@
     <string name="action_delete">Delete</string>
 
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
-    <string name="category_overview">About Book</string>
+    <string name="category_about">About Book</string>
 
     <!-- Label for book type in the editor [CHAR LIMIT=30] -->
     <string name="category_type">Type of Book</string>
