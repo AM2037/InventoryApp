@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Margin around the floating action button in CatalogActivity -->
+    <!-- Margin around the floating action button in FullCatalogActivity -->
     <dimen name="fab_margin">16dp</dimen>
 
     <!-- Common margin value used throughout the app -->
@@ -10,4 +10,11 @@
     <!-- Book type spinner -->
     <dimen name="spinner_height">48dp</dimen>
     <dimen name="spinner_padding">16dp</dimen>
+
+    <!-- Catalog dimens -->
+    <dimen name="padding">16dp</dimen>
+    <dimen name="padding2">8dp</dimen>
+
+    <!-- Editor dimens -->
+    <dimen name="width_height">48dp</dimen>
 </resources>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/activity_margin"
-    tools:context=".EditorActivity">
+    tools:context=".EditProductsActivity">
 
     <!-- Book information category -->
     <LinearLayout
@@ -34,21 +34,24 @@
                 android:id="@+id/edit_book_title"
                 android:hint="@string/hint_book_title"
                 android:inputType="textCapWords"
-                style="@style/EditorFieldStyle" />
+                style="@style/EditorFieldStyle"
+                tools:ignore="Autofill" />
 
             <!-- Breed field -->
             <EditText
                 android:id="@+id/edit_book_author"
                 android:hint="@string/hint_book_author"
                 android:inputType="textCapWords"
-                style="@style/EditorFieldStyle" />
+                style="@style/EditorFieldStyle"
+                tools:ignore="Autofill" />
 
             <!-- Price field -->
             <EditText
                 android:id="@+id/edit_book_price"
                 android:hint="@string/hint_book_price"
                 android:inputType="numberDecimal"
-                style="@style/EditorFieldStyle" />
+                style="@style/EditorFieldStyle"
+                tools:ignore="Autofill" />
 
         </LinearLayout>
     </LinearLayout>
@@ -83,6 +86,34 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- Stock category: add onClick="decrement" and onClick="increment" to buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_stock"
+            style="@style/CategoryStyle" />
+
+        <TextView
+            android:id="@+id/book_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/quantity" />
+
+        <Button
+            android:layout_width="@dimen/width_height"
+            android:layout_height="@dimen/width_height"
+            android:text="@string/decrement" />
+
+        <Button
+            android:layout_width="@dimen/width_height"
+            android:layout_height="@dimen/width_height"
+            android:text="@string/increment"/>
+    </LinearLayout>
+
     <!-- Information category -->
     <LinearLayout
         android:id="@+id/container_information"
@@ -103,19 +134,12 @@
             android:paddingLeft="@dimen/layout_padding"
             tools:ignore="RtlHardcoded,RtlSymmetry">
 
-            <EditText
-                android:id="@+id/edit_book_quantity"
-                android:hint="@string/hint_quantity"
-                android:inputType="number"
-                style="@style/EditorFieldStyle"/>
-
 
             <EditText
                 android:id="@+id/edit_supplier_name"
                 android:hint="@string/hint_supplier_name"
                 android:inputType="text"
-                style="@style/EditorFieldStyle"
-                android:layout_below="@id/edit_book_quantity"/>
+                style="@style/EditorFieldStyle" />
 
             <EditText
                 android:id="@+id/edit_supplier_number"

@@ -14,4 +14,7 @@
 
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#394450</color>
+
+    <!-- Subtitle color for activity_catalog.xml -->
+    <color name="subtitle_text">#A2AAB0</color>
 </resources>
