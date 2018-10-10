@@ -178,7 +178,7 @@ public class BookProvider extends ContentProvider {
 
         // Check that price is valid (was pet weight in pets app)
         // TODO: Delete all comments about pets app when finished!
-        Integer price = values.getAsInteger(BookEntry.COLUMN_BOOK_PRICE);
+        Double price = values.getAsDouble(BookEntry.COLUMN_BOOK_PRICE);
         if (price != null && price < 0) {
             throw new IllegalArgumentException("Book requires valid price");
         }
@@ -257,7 +257,7 @@ public class BookProvider extends ContentProvider {
         /* If the {@link BookEntry#COLUMN_BOOK_PRICE} key is present, check that the price value is valid. */
         if (values.containsKey(BookEntry.COLUMN_BOOK_PRICE)) {
             // Check that the price is greater than or equal to 0 dollars
-            Integer price = values.getAsInteger(BookEntry.COLUMN_BOOK_PRICE);
+            Double price = values.getAsDouble(BookEntry.COLUMN_BOOK_PRICE);
             if (price != null && price < 0) {
                 throw new IllegalArgumentException("Book requires valid price");
             }
