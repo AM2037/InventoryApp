@@ -42,8 +42,11 @@
     <!-- Label for stock category in editor [CHAR LIMIT=30] -->
     <string name="category_stock">Number in Stock</string>
 
+    <!-- Label for quantity in list_item.xml Catalog view [CHAR LIMIT=30] -->
+    <string name="quantity_view">In stock: </string>
+
     <!-- TextView for quantity(number in stock?) in the editor [CHAR LIMIT=30] -->
-    <string name="quantity">Number in Stock</string>
+    <string name="quantity">Enter quantity</string>
 
     <!-- Button text for increasing the quantity of books in stock [CHAR LIMIT=1] -->
     <string name="increment">+</string>
@@ -87,7 +90,7 @@
     <!-- Empty View subtitle text TODO: Modify to fulfill rubric requirement-->
     <string name="empty_view_subtitle_text">Get started by adding a book</string>
 
-    <!-- Dialog message to ask user to confirm deleting current book [CHAAR LIMIT=NONE] -->
+    <!-- Dialog message to ask user to confirm deleting current book [CHAR LIMIT=NONE] -->
     <string name="delete_dialog_msg">Delete this book?</string>
 
     <!-- Dialog message to ask user to confirm deletion of current book [CHAR LIMIT=20] -->

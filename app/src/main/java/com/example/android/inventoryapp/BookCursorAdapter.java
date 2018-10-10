@@ -16,6 +16,7 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
  * how to create list items for each row of book data in the {@link Cursor}.
  */
 public class BookCursorAdapter extends CursorAdapter {
+
     /**
      * Constructs a new {@link BookCursorAdapter}.
      *
@@ -56,26 +57,29 @@ public class BookCursorAdapter extends CursorAdapter {
         TextView summaryTextView = view.findViewById(R.id.summary);
 
         // TODO: Figure out how to make quantity and price work
-        //TextView priceTextView = view.findViewById(R.id.price);
-        //TextView quantityTextView = view.findViewById(R.id.quantity);
+        TextView priceTextView = view.findViewById(R.id.price);
+        TextView quantityTextView = view.findViewById(R.id.quantity);
+
 
         //Find the columns of book attributes that we're interested in
         int titleColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_TITLE);
         int authorColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_AUTHOR);
-        //int priceColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_PRICE);
+        int priceColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_PRICE);
+        int quantityColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_QUANTITY);
 
         //Read the book attributes from the Cursor for the current book
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookAuthor = cursor.getString(authorColumnIndex);
+        String bookPrice = cursor.getString(priceColumnIndex);
+        String bookQuantity = cursor.getString(quantityColumnIndex);
 
-        //double bookPrice = cursor.getDouble(priceColumnIndex);
+
 
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         summaryTextView.setText(bookAuthor);
-
-        //priceTextView.setText(bookPrice);
+        priceTextView.setText(bookPrice);
         //priceTextView.setText(String.valueOf(bookPrice));
-        //quantityTextView.setText(String.valueOf(bookQuantity));
+        quantityTextView.setText(String.valueOf(bookQuantity));
     }
 }

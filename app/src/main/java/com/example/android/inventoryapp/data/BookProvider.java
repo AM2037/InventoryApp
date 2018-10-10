@@ -19,6 +19,7 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
 /**
  * {@link ContentProvider} for Books app.
  */
+@SuppressWarnings("ALL")
 public class BookProvider extends ContentProvider {
 
     // Tag for the log messages
@@ -127,7 +128,7 @@ public class BookProvider extends ContentProvider {
      * Returns the MIME type of data for the content URI.
      */
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case BOOKS:

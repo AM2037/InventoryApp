@@ -60,6 +60,7 @@ public final class BookContract {
         public final static int BOOK_TYPE_PAPERBACK = 2;
 
         /** Determine whether given type is {@link #BOOK_TYPE_UNKNOWN}, {@link #BOOK_TYPE_HARDCOVER}, or {@link #BOOK_TYPE_PAPERBACK} */
+        @SuppressWarnings("BooleanMethodIsAlwaysInverted")
         public static boolean isValidType(int type) {
             return type == BOOK_TYPE_UNKNOWN || type == BOOK_TYPE_HARDCOVER || type == BOOK_TYPE_PAPERBACK;
         }

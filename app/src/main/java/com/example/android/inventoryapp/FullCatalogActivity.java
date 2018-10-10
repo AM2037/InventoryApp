@@ -24,6 +24,7 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
 /**
  * Displays list of books that were entered and stored in the app.
  */
+@SuppressWarnings("ALL")
 public class FullCatalogActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int BOOK_LOADER = 0;

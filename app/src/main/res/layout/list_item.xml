@@ -27,6 +27,7 @@
         android:textColor="#AEB6BD"
         tools:targetApi="jelly_bean" />
 
+
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
@@ -34,4 +35,12 @@
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="#187313"
         tools:targetApi="jelly_bean"/>
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity_view"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@android:color/black" />
 </LinearLayout>

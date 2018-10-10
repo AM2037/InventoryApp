@@ -32,6 +32,7 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
  * Used to be called "EditorActivity"
  */
 
+@SuppressWarnings("ALL")
 public class EditProductsActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
