@@ -79,7 +79,8 @@ public class BookCursorAdapter extends CursorAdapter {
         titleTextView.setText(bookTitle);
         summaryTextView.setText(bookAuthor);
         priceTextView.setText(bookPrice);
+        quantityTextView.setText(bookQuantity);
         //priceTextView.setText(String.valueOf(bookPrice));
-        quantityTextView.setText(String.valueOf(bookQuantity));
+        //quantityTextView.setText(String.valueOf(bookQuantity));
     }
 }
