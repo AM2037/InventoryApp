@@ -154,7 +154,9 @@ public class FullCatalogActivity extends AppCompatActivity implements LoaderMana
         String[] projection = {
                 BookEntry._ID,
                 BookEntry.COLUMN_BOOK_TITLE,
-                BookEntry.COLUMN_BOOK_AUTHOR };
+                BookEntry.COLUMN_BOOK_AUTHOR,
+                BookEntry.COLUMN_BOOK_PRICE,
+                BookEntry.COLUMN_BOOK_QUANTITY};
 
         // This loader will execute teh ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context

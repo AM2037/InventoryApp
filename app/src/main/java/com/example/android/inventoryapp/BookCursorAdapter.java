@@ -2,7 +2,6 @@ package com.example.android.inventoryapp;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +16,6 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
  * how to create list items for each row of book data in the {@link Cursor}.
  */
 public class BookCursorAdapter extends CursorAdapter {
-
-    public static final String LOG_TAG = BookCursorAdapter.class.getSimpleName();
 
     /**
      * Constructs a new {@link BookCursorAdapter}.
@@ -58,13 +55,9 @@ public class BookCursorAdapter extends CursorAdapter {
         // Find individual views that we want to modify in the list item layout
         TextView titleTextView = view.findViewById(R.id.title);
         TextView summaryTextView = view.findViewById(R.id.summary);
-
-        // TODO: Figure out how to make quantity and price work
         TextView priceTextView = view.findViewById(R.id.price);
         TextView quantityTextView = view.findViewById(R.id.quantity);
 
-
-        Log.e(LOG_TAG, "Error reading columns from cursor: " + cursor);
         //Find the columns of book attributes that we're interested in
         int titleColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_TITLE);
         int authorColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_AUTHOR);
@@ -78,12 +71,9 @@ public class BookCursorAdapter extends CursorAdapter {
         int bookQuantity = cursor.getInt(quantityColumnIndex);
 
 
-
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         summaryTextView.setText(bookAuthor);
-        //priceTextView.setText(bookPrice);
-        //quantityTextView.setText(bookQuantity);
         priceTextView.setText(String.valueOf(bookPrice));
         quantityTextView.setText(String.valueOf(bookQuantity));
     }
