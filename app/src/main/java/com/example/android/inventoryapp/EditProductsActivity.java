@@ -20,9 +20,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.inventoryapp.data.BookContract.BookEntry;
@@ -56,7 +56,13 @@ public class EditProductsActivity extends AppCompatActivity implements
     private Spinner mTypeSpinner;
 
     /** TextView to show many in stock, or quantity */
-    private TextView mQuantityTextView;
+    private EditText mQuantityEditText;
+
+    /** Button for decreasing quantity of books in stock */
+    private Button decreaseQuantity;
+
+    /** Button for increasing quantity of books in stock */
+    private Button increaseQuantity;
 
     /** EditText field to enter supplier name */
     private EditText mSupplierEditText;
@@ -120,7 +126,9 @@ public class EditProductsActivity extends AppCompatActivity implements
         mAuthorEditText = findViewById(R.id.edit_book_author);
         mPriceEditText = findViewById(R.id.edit_book_price);
         mTypeSpinner = findViewById(R.id.spinner_type);
-        mQuantityTextView = findViewById(R.id.book_quantity);
+        mQuantityEditText = findViewById(R.id.book_quantity);
+        Button decreaseQuantity = (Button) findViewById(R.id.decrease_quantity);
+        Button increaseQuantity = (Button) findViewById(R.id.increase_quantity);
         mSupplierEditText = findViewById(R.id.edit_supplier_name);
         mNumberEditText = findViewById(R.id.edit_supplier_number);
 
@@ -130,7 +138,7 @@ public class EditProductsActivity extends AppCompatActivity implements
         mAuthorEditText.setOnTouchListener(mTouchListener);
         mPriceEditText.setOnTouchListener(mTouchListener);
         mTypeSpinner.setOnTouchListener(mTouchListener);
-        mQuantityTextView.setOnTouchListener(mTouchListener);
+        mQuantityEditText.setOnTouchListener(mTouchListener);
         mSupplierEditText.setOnTouchListener(mTouchListener);
         mNumberEditText.setOnTouchListener(mTouchListener);
 
@@ -140,6 +148,45 @@ public class EditProductsActivity extends AppCompatActivity implements
         setSpinner();
     }
 
+    /**
+     * This method is called when the user wishes to increase, or increment, the quantity of books in stock.
+     * Modified to catch when user tries to enter negative books.
+     */
+    public void decreaseQuantity(View view) {
+        decreaseQuantity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    String theQuantity = mQuantityEditText.getText().toString();
+                    int newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
+
+                    if (Integer.valueOf(theQuantity) != 0) {
+                        mQuantityEditText.setText(String.valueOf(newQuantity - 1));
+                    }
+
+                    if (Integer.valueOf(theQuantity) == 0 || TextUtils.isEmpty(theQuantity)) {
+                        Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
+                        mQuantityEditText.setText(R.string.zero);
+                    }
+                }
+        });
+    }
+
+
+    public void increaseQuantity(View v) {
+        increaseQuantity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String theQuantity = mQuantityEditText.getText().toString();
+                int newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
+
+                mQuantityEditText.setText(String.valueOf(newQuantity + 1));
+                if (TextUtils.isEmpty(theQuantity)) {
+                    mQuantityEditText.setText(R.string.zero);
+                }
+
+            }
+        });
+    }
     /**
      * Set up dropdown spinner for book type
      */
@@ -187,7 +234,7 @@ public class EditProductsActivity extends AppCompatActivity implements
         String titleString = mTitleEditText.getText().toString().trim();
         String authorString = mAuthorEditText.getText().toString().trim();
         String priceString = mPriceEditText.getText().toString().trim();
-        String quantityString = mQuantityTextView.getText().toString().trim();
+        String quantityString = mQuantityEditText.getText().toString().trim();
         int quantity = Integer.parseInt(quantityString);
         String supplierString = mSupplierEditText.getText().toString().trim();
         String numberString = mNumberEditText.getText().toString().trim();
@@ -402,7 +449,7 @@ public class EditProductsActivity extends AppCompatActivity implements
             mTitleEditText.setText(title);
             mAuthorEditText.setText(author);
             mPriceEditText.setText(Double.toString(price));
-            mQuantityTextView.setText(Integer.toString(quantity));
+            mQuantityEditText.setText(Integer.toString(quantity));
             mSupplierEditText.setText(supplier);
             mNumberEditText.setText(number);
 
@@ -429,7 +476,7 @@ public class EditProductsActivity extends AppCompatActivity implements
         mTitleEditText.setText("");
         mAuthorEditText.setText("");
         mPriceEditText.setText("");
-        mQuantityTextView.setText("");
+        mQuantityEditText.setText("");
         mTypeSpinner.setSelection(0); // Select "unknown" type
         mSupplierEditText.setText("");
         mNumberEditText.setText("");

@@ -54,6 +54,12 @@
     <!-- Button text for decreasing the quantity of books in stock [CHAR LIMIT=1] -->
     <string name="decrement">-</string>
 
+    <!-- For updating quantity view -->
+    <string name="zero">0</string>
+
+    <!-- Toast message for when user tries to enter a negative number for number in stock -->
+    <string name="toast_not_zero">Please enter a value for quantity of books in stock.</string>
+
     <!-- Text hint for supplier name [CHAR LIMIT=30] -->
     <string name="hint_supplier_name">Supplier Name</string>
 

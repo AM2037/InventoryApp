@@ -97,24 +97,22 @@
             android:text="@string/category_stock"
             style="@style/CategoryStyle" />
 
-        <TextView
+        <EditText
             android:id="@+id/book_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:hint="@string/quantity"
-            android:textSize="@dimen/view_text_size"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:fontFamily="sans-serif-light"
-            android:paddingLeft="@dimen/padding"
-            android:paddingRight="@dimen/padding"
-            tools:targetApi="jelly_bean" />
+            android:inputType="text"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_marginStart="@dimen/padding"
+            style="@style/EditorFieldStyle" />
 
         <Button
+            android:id="@+id/decrease_quantity"
             android:layout_width="@dimen/width_height"
             android:layout_height="@dimen/width_height"
             android:text="@string/decrement" />
 
         <Button
+            android:id="@+id/increase_quantity"
             android:layout_width="@dimen/width_height"
             android:layout_height="@dimen/width_height"
             android:text="@string/increment"/>
