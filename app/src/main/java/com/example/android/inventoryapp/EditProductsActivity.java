@@ -152,16 +152,26 @@ public class EditProductsActivity extends AppCompatActivity implements
         decreaseQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String theQuantity = mQuantityEditText.getText().toString();
-                int newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
+                String theQuantity = null;
+                int newQuantity = 0;
+                try {
+                    theQuantity = mQuantityEditText.getText().toString();
+                    newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
 
-                if (Integer.valueOf(theQuantity) != 0) {
-                    mQuantityEditText.setText(String.valueOf(newQuantity - 1));
-                }
+                    if (Integer.valueOf(theQuantity) != 0) {
+                        mQuantityEditText.setText(String.valueOf(newQuantity - 1));
+                    }
 
-                if (Integer.valueOf(theQuantity) == 0 || TextUtils.isEmpty(theQuantity)) {
-                    Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
-                    mQuantityEditText.setText(R.string.zero);
+                    if (Integer.valueOf(theQuantity) == 0 || TextUtils.isEmpty(theQuantity)) {
+                        Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
+                        mQuantityEditText.setText(R.string.zero);
+                    }
+
+                } catch (NumberFormatException e) {
+                    if (theQuantity.isEmpty()) {
+                        Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
+                    }
+                    e.printStackTrace();
                 }
             }
         });
@@ -170,9 +180,28 @@ public class EditProductsActivity extends AppCompatActivity implements
         increaseQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String theQuantity = mQuantityEditText.getText().toString();
-                int newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
+                String theQuantity = null;
+                int newQuantity = 0;
 
+                try {
+                    theQuantity = mQuantityEditText.getText().toString();
+                    newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
+
+                    if (Integer.valueOf(theQuantity) != 0) {
+                        mQuantityEditText.setText(String.valueOf(newQuantity - 1));
+                    }
+
+                    if (Integer.valueOf(theQuantity) == 0 || TextUtils.isEmpty(theQuantity)) {
+                        Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
+                        mQuantityEditText.setText(R.string.zero);
+                    }
+
+                } catch (NumberFormatException e) {
+                    if (theQuantity.isEmpty()) {
+                        Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
+                    }
+                    e.printStackTrace();
+                }
                 mQuantityEditText.setText(String.valueOf(newQuantity + 1));
                 if (TextUtils.isEmpty(theQuantity)) {
                     mQuantityEditText.setText(R.string.zero);
@@ -226,13 +255,25 @@ public class EditProductsActivity extends AppCompatActivity implements
     private void saveBook() {
         // Read from input fields
         // Delete trailing or unnecessary space(s)
-        String titleString = mTitleEditText.getText().toString().trim();
-        String authorString = mAuthorEditText.getText().toString().trim();
-        String priceString = mPriceEditText.getText().toString().trim();
-        String quantityString = mQuantityEditText.getText().toString().trim();
-        int quantity = Integer.parseInt(quantityString);
-        String supplierString = mSupplierEditText.getText().toString().trim();
-        String numberString = mNumberEditText.getText().toString().trim();
+        String titleString = null;
+        String authorString = null;
+        String priceString = null;
+        String quantityString = null;
+        int quantity = 0;
+        String supplierString = null;
+        String numberString = null;
+        try {
+            titleString = mTitleEditText.getText().toString().trim();
+            authorString = mAuthorEditText.getText().toString().trim();
+            priceString = mPriceEditText.getText().toString().trim();
+            quantityString = mQuantityEditText.getText().toString().trim();
+            quantity = Integer.parseInt(quantityString);
+            supplierString = mSupplierEditText.getText().toString().trim();
+            numberString = mNumberEditText.getText().toString().trim();
+        } catch (NumberFormatException e) {
+            quantity = 0;
+            e.printStackTrace();
+        }
 
         // Check if this is supposed to be a new book & if all fields are blank
         if (mCurrentBookUri == null &&

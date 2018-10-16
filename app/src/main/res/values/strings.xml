@@ -63,6 +63,9 @@
     <!-- Toast message for when user tries to enter a negative number for number in stock -->
     <string name="toast_not_zero">Please enter a value for quantity of books in stock.</string>
 
+    <!-- Toast for when user tries to save the book without entering anything into the Quantity field -->
+    <string name="toast_edit">Please enter a value for quantity before saving book.</string>
+
     <!-- Button text for when the user wants to sell an item (book) -->
     <string name="sell">Sell Item</string>
 
