@@ -146,33 +146,27 @@ public class EditProductsActivity extends AppCompatActivity implements
         // https://github.com/yummywakame/BookInventory2/blob/master/app/src/main/java/com/yummywakame/bookinventory2/EditorActivity.java
 
         setSpinner();
-    }
 
-    /**
-     * This method is called when the user wishes to increase, or increment, the quantity of books in stock.
-     * Modified to catch when user tries to enter negative books.
-     */
-    public void decreaseQuantity(View view) {
+        // Decrease number of books in stock
+
         decreaseQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String theQuantity = mQuantityEditText.getText().toString();
-                    int newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
+                String theQuantity = mQuantityEditText.getText().toString();
+                int newQuantity = Integer.parseInt(mQuantityEditText.getText().toString().trim());
 
-                    if (Integer.valueOf(theQuantity) != 0) {
-                        mQuantityEditText.setText(String.valueOf(newQuantity - 1));
-                    }
-
-                    if (Integer.valueOf(theQuantity) == 0 || TextUtils.isEmpty(theQuantity)) {
-                        Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
-                        mQuantityEditText.setText(R.string.zero);
-                    }
+                if (Integer.valueOf(theQuantity) != 0) {
+                    mQuantityEditText.setText(String.valueOf(newQuantity - 1));
                 }
+
+                if (Integer.valueOf(theQuantity) == 0 || TextUtils.isEmpty(theQuantity)) {
+                    Toast.makeText(EditProductsActivity.this, R.string.toast_not_zero, Toast.LENGTH_SHORT).show();
+                    mQuantityEditText.setText(R.string.zero);
+                }
+            }
         });
-    }
 
-
-    public void increaseQuantity(View v) {
+        // Increase number of books in stock
         increaseQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,6 +181,7 @@ public class EditProductsActivity extends AppCompatActivity implements
             }
         });
     }
+
     /**
      * Set up dropdown spinner for book type
      */
