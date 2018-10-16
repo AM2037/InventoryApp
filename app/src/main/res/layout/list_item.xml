@@ -92,8 +92,9 @@
         android:text="@string/sell"
         android:layout_below="@id/price"
         android:layout_centerInParent="true"
-        android:textColor="@android:color/holo_red_light"
+        android:textColor="@color/colorPrimaryDark"
         android:textAppearance="?android:textAppearanceSmall"
+        android:textStyle="bold"
         android:fontFamily="sans-serif"
         tools:targetApi="jelly_bean" />
 
