@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.android.inventoryapp.data.BookContract.BookEntry;
 
@@ -37,8 +38,7 @@ public class FullCatalogActivity extends AppCompatActivity implements LoaderMana
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
 
-        // Setup FAB to open EditProductsActivity
-        // TODO: Implement nested FAB's for separate edit and update buttons?
+        // FAB to open EditProductsActivity
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +119,42 @@ public class FullCatalogActivity extends AppCompatActivity implements LoaderMana
         */
     }
 
-    /** Helper method to delete all books in the database. */
+    /**
+     * Method for selling items-- when a book is sold it's quantity shown by the "In Stock: #" TextViews in FullCatalogActivity will decrease.
+     * In accordance with that logic, when an order is placed to restock an item or the user enters a new quantity the number will increase.
+     */
+    public void sellBook(int itemId, int quantity) {
+
+        // If there are currently books, reduce by 1 each time an item is sold.
+        if (quantity > 0) {
+            quantity--;
+
+            // Recreate URI with new content values
+            Uri soldUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, itemId);
+            ContentValues values = new ContentValues();
+            values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantity);
+            int rowsUpdated = getContentResolver().update(
+                    soldUri,
+                    values,
+                    null,
+                    null);
+            if (rowsUpdated == 0) {
+                // If none updated, show error message in a toast
+                Toast.makeText(this, R.string.sale_error, Toast.LENGTH_LONG).show();
+            } else {
+                // Otherwise, the sale was successful-- show toast.
+                Toast.makeText(this, R.string.sale_success, Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        if (quantity == 0) {
+            Toast.makeText(this, R.string.toast_sales, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Helper method to delete all books in the database.
+     */
     private void deleteAllBooks() {
         int rowsDeleted = getContentResolver().delete(BookEntry.CONTENT_URI, null, null);
         Log.v("FullCatalogActivity", rowsDeleted + " rows deleted from the book database");

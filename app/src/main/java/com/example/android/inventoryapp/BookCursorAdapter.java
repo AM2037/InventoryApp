@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
@@ -51,12 +52,13 @@ public class BookCursorAdapter extends CursorAdapter {
      *                correct row.
      */
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {
+    public void bindView(View view, final Context context, Cursor cursor) {
         // Find individual views that we want to modify in the list item layout
         TextView titleTextView = view.findViewById(R.id.title);
         TextView summaryTextView = view.findViewById(R.id.summary);
         TextView priceTextView = view.findViewById(R.id.price);
         TextView quantityTextView = view.findViewById(R.id.quantity);
+        Button saleButton = view.findViewById(R.id.sell);
 
         //Find the columns of book attributes that we're interested in
         int titleColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_TITLE);
@@ -68,13 +70,24 @@ public class BookCursorAdapter extends CursorAdapter {
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookAuthor = cursor.getString(authorColumnIndex);
         double bookPrice = cursor.getDouble(priceColumnIndex);
-        int bookQuantity = cursor.getInt(quantityColumnIndex);
+        String bookQuantity = cursor.getString(quantityColumnIndex);
 
 
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         summaryTextView.setText(bookAuthor);
         priceTextView.setText(String.valueOf(bookPrice));
-        quantityTextView.setText(String.valueOf(bookQuantity));
+        quantityTextView.setText(bookQuantity);
+
+        final int id = cursor.getInt(cursor.getColumnIndex(BookEntry._ID));
+        final int quantity = Integer.parseInt(bookQuantity);
+        // Sell items
+        saleButton.findViewById(R.id.sell).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FullCatalogActivity mainActivity = (FullCatalogActivity) context;
+                mainActivity.sellBook(id, quantity);
+            }
+        });
     }
 }

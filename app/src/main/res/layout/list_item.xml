@@ -14,7 +14,11 @@
         android:fontFamily="sans-serif-medium"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="#2B3D4D"
-        tools:targetApi="jelly_bean" />
+        tools:targetApi="jelly_bean"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/stock"
+        android:layout_toStartOf="@id/stock"
+        android:layout_alignParentStart="true" />
 
 
     <TextView
@@ -60,11 +64,13 @@
         android:layout_below="@id/quantity"
         android:layout_toLeftOf="@id/quantity"
         android:layout_toStartOf="@id/quantity"
+        android:paddingRight="@dimen/view_padding"
         android:text="@string/cost"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="@android:color/black"
         android:fontFamily="sans-serif"
-        tools:targetApi="jelly_bean" />
+        tools:targetApi="jelly_bean"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <TextView
         android:id="@+id/price"
@@ -72,12 +78,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/quantity"
-        android:paddingLeft="@dimen/padding"
+        android:paddingLeft="@dimen/view_padding"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="#187313"
         tools:targetApi="jelly_bean"
-        android:paddingStart="@dimen/padding"
+        android:paddingStart="@dimen/view_padding"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
+    <Button
+        android:id="@+id/sell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sell"
+        android:layout_below="@id/price"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/holo_red_light"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:fontFamily="sans-serif"
+        tools:targetApi="jelly_bean" />
 
 </RelativeLayout>

@@ -63,17 +63,17 @@
     <!-- Toast message for when user tries to enter a negative number for number in stock -->
     <string name="toast_not_zero">Please enter a value for quantity of books in stock.</string>
 
+    <!-- Button text for when the user wants to sell an item (book) -->
+    <string name="sell">Sell Item</string>
+
+    <!-- Toast message alerting user there was an error with the sale -->
+    <string name="sale_error">There was an error processing the sale of this item. Please try again.</string>
+
+    <!-- Toast message alerting user the sale was a success -->
+    <string name="sale_success">This item was sold successfully.</string>
+
     <!-- Toast alerting user that you cannot sell what you don't have -->
     <string name="toast_sales">There are currently none of this item left in stock.</string>
-
-    <!-- Alert dialog for restocking items -->
-    <string name="alert_restock">Would you like to order more of this item?</string>
-
-    <!-- Button text confirming the user would like to order more of an item -->
-    <string name="confirm">Yes</string>
-
-    <!-- Button text denying the order for more items -->
-    <string name="deny">No</string>
 
     <!-- Text hint for supplier name [CHAR LIMIT=30] -->
     <string name="hint_supplier_name">Supplier Name</string>
