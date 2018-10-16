@@ -255,21 +255,16 @@ public class EditProductsActivity extends AppCompatActivity implements
     private void saveBook() {
         // Read from input fields
         // Delete trailing or unnecessary space(s)
-        String titleString = null;
-        String authorString = null;
-        String priceString = null;
-        String quantityString = null;
+        String titleString = mTitleEditText.getText().toString().trim();
+        String authorString = mAuthorEditText.getText().toString().trim();
+        String priceString = mPriceEditText.getText().toString().trim();
+        String quantityString = mQuantityEditText.getText().toString().trim();
+        String supplierString = mSupplierEditText.getText().toString().trim();
+        String numberString = mNumberEditText.getText().toString().trim();
+
         int quantity = 0;
-        String supplierString = null;
-        String numberString = null;
         try {
-            titleString = mTitleEditText.getText().toString().trim();
-            authorString = mAuthorEditText.getText().toString().trim();
-            priceString = mPriceEditText.getText().toString().trim();
-            quantityString = mQuantityEditText.getText().toString().trim();
             quantity = Integer.parseInt(quantityString);
-            supplierString = mSupplierEditText.getText().toString().trim();
-            numberString = mNumberEditText.getText().toString().trim();
         } catch (NumberFormatException e) {
             quantity = 0;
             e.printStackTrace();
