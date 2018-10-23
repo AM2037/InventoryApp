@@ -95,6 +95,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textAppearance="?android:textAppearanceSmall"
         android:textStyle="bold"
+        android:focusable="false"
         android:fontFamily="sans-serif"
         tools:targetApi="jelly_bean" />
 
