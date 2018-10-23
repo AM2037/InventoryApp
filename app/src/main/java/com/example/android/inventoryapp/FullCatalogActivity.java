@@ -28,6 +28,8 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
 @SuppressWarnings("ALL")
 public class FullCatalogActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    public static final String LOG_TAG = FullCatalogActivity.class.getSimpleName();
+
     private static final int BOOK_LOADER = 0;
 
     // Adapter for our ListView
@@ -81,6 +83,9 @@ public class FullCatalogActivity extends AppCompatActivity implements LoaderMana
 
                 // Launch the {@link EditProductsActivity} to display the data for the current book.
                 startActivity(intent);
+                Log.e(LOG_TAG, "Error when clicking on list item: " + position);
+
+                // TODO: Set click listener when item is clicked on to go to product detail view
             }
         });
 
