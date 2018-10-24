@@ -66,9 +66,6 @@
     <!-- Toast message for when user tries to enter a negative number for number in stock -->
     <string name="toast_not_zero">Please enter a value for quantity of books in stock.</string>
 
-    <!-- Toast for when user tries to save the book without entering anything into the Quantity field -->
-    <string name="toast_edit">Please enter a value for quantity before saving book.</string>
-
     <!-- Button text for when the user wants to sell an item (book) -->
     <string name="sell">Sell Item</string>
 
@@ -111,11 +108,11 @@
     <!-- Dialog button text for option to keep editing [CHAR LIMIT=20] -->
     <string name="keep_editing">Keep Editing</string>
 
-    <!-- Empty View title text TODO: Modify to fulfill rubric requirement -->
+    <!-- Empty View title text -->
     <string name="empty_view_title_text">It\'s a bit lonely here…</string>
 
-    <!-- Empty View subtitle text TODO: Modify to fulfill rubric requirement-->
-    <string name="empty_view_subtitle_text">Get started by adding a book</string>
+    <!-- Empty View subtitle text -->
+    <string name="empty_view_subtitle_text">Get started by adding a book. \nEither open the overflow menu on the \ntop right or click the green button!</string>
 
     <!-- Dialog message to ask user to confirm deleting current book [CHAR LIMIT=NONE] -->
     <string name="delete_dialog_msg">Delete this book?</string>
@@ -125,7 +122,4 @@
 
     <!-- Dialog button text for option to cancel deletion of current book [CHAR LIMIT=20] -->
     <string name="cancel">Cancel</string>
-
-    <!-- TextView for catalog list item quantity header -->
-    <string name="qty">In Stock: </string>
 </resources>

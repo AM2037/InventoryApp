@@ -16,6 +16,7 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
  * that uses a {@link Cursor} of book data as its data source. This adapter knows
  * how to create list items for each row of book data in the {@link Cursor}.
  */
+@SuppressWarnings("ALL")
 public class BookCursorAdapter extends CursorAdapter {
 
     /**

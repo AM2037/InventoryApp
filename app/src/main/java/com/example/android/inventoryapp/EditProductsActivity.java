@@ -142,13 +142,9 @@ public class EditProductsActivity extends AppCompatActivity implements
         mSupplierEditText.setOnTouchListener(mTouchListener);
         mNumberEditText.setOnTouchListener(mTouchListener);
 
-        // Get local currency for each user? i.e.
-        // https://github.com/yummywakame/BookInventory2/blob/master/app/src/main/java/com/yummywakame/bookinventory2/EditorActivity.java
-
         setSpinner();
 
         // Decrease number of books in stock
-
         decreaseQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -219,7 +215,7 @@ public class EditProductsActivity extends AppCompatActivity implements
         ArrayAdapter typeSpinnerAdapter = ArrayAdapter.createFromResource(this,
                 R.array.array_type_options, android.R.layout.simple_spinner_item);
 
-        // Specify layout style for dropdown menu-- List using 1 item/line [may switch to recycler later]
+        // Specify layout style for dropdown menu-- List using 1 item/line
         typeSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         // Apply adapter
@@ -360,21 +356,23 @@ public class EditProductsActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
-            // Respond to a click on the "Save" menu option
+            // Respond to a click on the "Save" menu icon
             case R.id.action_save:
                 // Save book to database
                 saveBook();
                 // Exit activity
                 finish();
                 return true;
-            // Respond to a click on the "Delete" menu option
+            // Respond to a click on the "Delete" menu icon
             case R.id.action_delete:
                 // Pop up confirmation dialog for deletion
                 showDeleteConfirmationDialog();
                 return true;
+            // Respond to a click on the "Call" menu icon
             case R.id.action_call:
-                // Gives user option to call supplier
+                // Opens number in phone dialer
                 dialSupplier();
+                // Exit activity
                 finish();
                 return true;
             // Respond to a click on the "Up" arrow button in the app bar

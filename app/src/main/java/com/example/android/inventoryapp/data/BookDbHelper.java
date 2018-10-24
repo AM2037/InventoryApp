@@ -11,6 +11,7 @@ import com.example.android.inventoryapp.data.BookContract.BookEntry;
 /**
  * Database helper for the Inventory App. Manages book database creation and version.
  */
+@SuppressWarnings("ALL")
 public class BookDbHelper extends SQLiteOpenHelper {
 
     public static final String LOG_TAG = BookDbHelper.class.getSimpleName();

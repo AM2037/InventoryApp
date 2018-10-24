@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 /** Schema and contract class {@link BookContract} for the book store database */
+@SuppressWarnings("WeakerAccess")
 public final class BookContract {
 
     // So as to not accidentally instantiate the class

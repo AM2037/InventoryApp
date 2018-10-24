@@ -162,28 +162,24 @@ public class BookProvider extends ContentProvider {
      */
     private Uri insertBook(Uri uri, ContentValues values) {
         // Check that name is not null-- added native isEmpty check;
-        // could also be || name.isEmpty() ) {...
         String name = values.getAsString(BookEntry.COLUMN_BOOK_TITLE);
         if (name == null || TextUtils.isEmpty(name)) {
-            throw new IllegalArgumentException("Pet requires a name");
+            throw new IllegalArgumentException("Book requires a name");
         }
 
         // Check that type is valid
-        // Could be simplified to return type == BOOK_TYPE_UNKNOWN || type == BOOK_TYPE_HARDCOVER ||
-        // type == BOOK_TYPE_PAPERBACK;
         Integer type = values.getAsInteger(BookEntry.COLUMN_BOOK_TYPE);
         if (type == null || !BookEntry.isValidType(type)) {
             throw new IllegalArgumentException("Book requires valid type");
         }
 
-        // Check that price is valid (was pet weight in pets app)
-        // TODO: Delete all comments about pets app when finished!
+        // Check that price is valid
         Double price = values.getAsDouble(BookEntry.COLUMN_BOOK_PRICE);
         if (price != null && price < 0) {
             throw new IllegalArgumentException("Book requires valid price");
         }
 
-        // No need to check quantity, any value including null is valid. (was breed)
+        // No need to check quantity, any value including null is valid.
 
         // Get writable database
         SQLiteDatabase database = mDbHelper.getWritableDatabase();

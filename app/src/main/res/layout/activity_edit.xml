@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Layout for the editor -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,40 +15,40 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_about"
-            style="@style/CategoryStyle" />
+            style="@style/CategoryStyle"
+            android:text="@string/category_about" />
 
         <!-- Input fields -->
         <LinearLayout
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:orientation="vertical"
             android:paddingLeft="@dimen/layout_padding"
-            android:paddingRight="@dimen/layout_padding"
-            android:orientation="vertical">
+            android:paddingRight="@dimen/layout_padding">
 
             <!-- Name field -->
             <EditText
                 android:id="@+id/edit_book_title"
+                style="@style/EditorFieldStyle"
                 android:hint="@string/hint_book_title"
                 android:inputType="textCapWords"
-                style="@style/EditorFieldStyle"
                 tools:ignore="Autofill" />
 
             <!-- Breed field -->
             <EditText
                 android:id="@+id/edit_book_author"
+                style="@style/EditorFieldStyle"
                 android:hint="@string/hint_book_author"
                 android:inputType="textCapWords"
-                style="@style/EditorFieldStyle"
                 tools:ignore="Autofill" />
 
             <!-- Price field -->
             <EditText
                 android:id="@+id/edit_book_price"
+                style="@style/EditorFieldStyle"
                 android:hint="@string/hint_book_price"
                 android:inputType="numberDecimal"
-                style="@style/EditorFieldStyle"
                 tools:ignore="Autofill" />
 
         </LinearLayout>
@@ -65,28 +63,28 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_type"
-            style="@style/CategoryStyle" />
+            style="@style/CategoryStyle"
+            android:text="@string/category_type" />
 
         <!-- Input field -->
         <LinearLayout
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical">
 
             <!-- Book Type drop-down spinner -->
             <Spinner
                 android:id="@+id/spinner_type"
-                android:layout_height="@dimen/spinner_height"
                 android:layout_width="wrap_content"
+                android:layout_height="@dimen/spinner_height"
                 android:paddingRight="@dimen/spinner_padding"
                 android:spinnerMode="dropdown"
                 tools:ignore="RtlHardcoded,RtlSymmetry" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Stock category: add onClick="decrement" and onClick="increment" to buttons -->
+    <!-- Stock category -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,16 +92,17 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_stock"
-            style="@style/CategoryStyle" />
+            style="@style/CategoryStyle"
+            android:text="@string/category_stock" />
 
         <EditText
             android:id="@+id/book_quantity"
+            style="@style/EditorFieldStyle"
+            android:layout_marginStart="@dimen/padding"
+            android:layout_marginLeft="@dimen/padding"
             android:hint="@string/quantity"
             android:inputType="text"
-            android:layout_marginLeft="@dimen/padding"
-            android:layout_marginStart="@dimen/padding"
-            style="@style/EditorFieldStyle" />
+            tools:ignore="Autofill" />
 
         <Button
             android:id="@+id/decrease_quantity"
@@ -115,7 +114,7 @@
             android:id="@+id/increase_quantity"
             android:layout_width="@dimen/width_height"
             android:layout_height="@dimen/width_height"
-            android:text="@string/increment"/>
+            android:text="@string/increment" />
     </LinearLayout>
 
     <!-- Information category -->
@@ -127,13 +126,13 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_information"
-            style="@style/CategoryStyle" />
+            style="@style/CategoryStyle"
+            android:text="@string/category_information" />
 
         <!-- Input fields -->
         <RelativeLayout
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:paddingLeft="@dimen/layout_padding"
             tools:ignore="RtlHardcoded,RtlSymmetry">
@@ -141,16 +140,18 @@
 
             <EditText
                 android:id="@+id/edit_supplier_name"
+                style="@style/EditorFieldStyle"
                 android:hint="@string/hint_supplier_name"
                 android:inputType="textCapWords"
-                style="@style/EditorFieldStyle" />
+                tools:ignore="Autofill" />
 
             <EditText
                 android:id="@+id/edit_supplier_number"
+                style="@style/EditorFieldStyle"
+                android:layout_below="@+id/edit_supplier_name"
                 android:hint="@string/hint_supplier_number"
                 android:inputType="phone"
-                style="@style/EditorFieldStyle"
-                android:layout_below="@+id/edit_supplier_name"/>
+                tools:ignore="Autofill" />
 
         </RelativeLayout>
     </LinearLayout>
