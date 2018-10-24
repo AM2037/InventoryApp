@@ -372,6 +372,11 @@ public class EditProductsActivity extends AppCompatActivity implements
                 // Pop up confirmation dialog for deletion
                 showDeleteConfirmationDialog();
                 return true;
+            case R.id.action_call:
+                // Gives user option to call supplier
+                dialSupplier();
+                finish();
+                return true;
             // Respond to a click on the "Up" arrow button in the app bar
             case android.R.id.home:
                 // If the book hasn't changed, continue with navigating up to parent activity
@@ -513,6 +518,15 @@ public class EditProductsActivity extends AppCompatActivity implements
         mNumberEditText.setText("");
     }
 
+    /**
+     * Intent to open dialer giving users an option to call the supplier
+     */
+    public void dialSupplier(){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + mNumberEditText.getText().toString().trim()));
+        startActivity(intent);
+
+    }
     /**
      * Show dialog that warns user there's unsaved changes they'll lose if
      * they continue leaving editor

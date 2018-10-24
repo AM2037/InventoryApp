@@ -21,6 +21,9 @@
     <!-- Label for editor overflow menu option that deletes the current book [CHAR LIMIT=20] -->
     <string name="action_delete">Delete</string>
 
+    <!-- Label for editor overflow menu option that gives user option to call supplier [CHAR LIMIT = 20] -->
+    <string name="action_call">Call</string>
+
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
     <string name="category_about">About Book</string>
 
