@@ -62,10 +62,7 @@ public class FullCatalogActivity extends AppCompatActivity implements LoaderMana
         // Setup item click listener
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                // Create new intent to go to {@link EditProductsActivity}
-                Intent intent = new Intent(FullCatalogActivity.this, EditProductsActivity.class);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 /*
                   Form the content URI that represents the specific book that was clicked on,
@@ -75,6 +72,9 @@ public class FullCatalogActivity extends AppCompatActivity implements LoaderMana
                   */
 
                 Uri currentBookUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, id);
+
+                // Create new intent to go to {@link EditProductsActivity}
+                Intent intent = new Intent(FullCatalogActivity.this, EditProductsActivity.class);
 
                 // Set the URI on the data field of the intent
                 intent.setData(currentBookUri);
