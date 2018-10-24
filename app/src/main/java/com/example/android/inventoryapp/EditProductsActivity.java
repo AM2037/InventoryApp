@@ -260,13 +260,13 @@ public class EditProductsActivity extends AppCompatActivity implements
         String supplierString = mSupplierEditText.getText().toString().trim();
         String numberString = mNumberEditText.getText().toString().trim();
 
-       /* int quantity = 0;
+        int quantity = 0;
         try {
             quantity = Integer.parseInt(quantityString);
         } catch (NumberFormatException e) {
             quantity = 0;
             e.printStackTrace();
-        }*/
+        }
 
         if (TextUtils.isEmpty(titleString) || TextUtils.isEmpty(authorString) || TextUtils.isEmpty(priceString)
                 || TextUtils.isEmpty(quantityString) || TextUtils.isEmpty(supplierString) || TextUtils.isEmpty(numberString)) {
@@ -275,11 +275,11 @@ public class EditProductsActivity extends AppCompatActivity implements
             ContentValues values = new ContentValues();
             values.put(BookEntry.COLUMN_BOOK_TITLE, titleString);
             values.put(BookEntry.COLUMN_BOOK_AUTHOR, authorString);
-            /* Integer.parseInt("1") --> 1 ex for ones converted to integers
+            //Integer.parseInt("1") --> 1 ex for ones converted to integers
             double price = 0;
             if (!TextUtils.isEmpty(priceString)) {
                 price = Double.parseDouble(priceString);
-            } */
+            }
             values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
             values.put(BookEntry.COLUMN_BOOK_TYPE, mType);
             values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityString);
@@ -337,8 +337,6 @@ public class EditProductsActivity extends AppCompatActivity implements
             case R.id.action_save:
                 // Save book to database
                 saveBook();
-                // Exit activity
-                finish();
                 return true;
             // Respond to a click on the "Delete" menu icon
             case R.id.action_delete:
