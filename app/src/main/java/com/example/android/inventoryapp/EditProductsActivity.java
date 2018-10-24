@@ -248,6 +248,8 @@ public class EditProductsActivity extends AppCompatActivity implements
     /**
      * Retrieve user entry and save book to database
      */
+
+
     private void saveBook() {
         // Read from input fields
         // Delete trailing or unnecessary space(s)
@@ -258,75 +260,50 @@ public class EditProductsActivity extends AppCompatActivity implements
         String supplierString = mSupplierEditText.getText().toString().trim();
         String numberString = mNumberEditText.getText().toString().trim();
 
-        int quantity = 0;
+       /* int quantity = 0;
         try {
             quantity = Integer.parseInt(quantityString);
         } catch (NumberFormatException e) {
             quantity = 0;
             e.printStackTrace();
-        }
+        }*/
 
-        // Check if this is supposed to be a new book & if all fields are blank
-        if (mCurrentBookUri == null &&
-                TextUtils.isEmpty(titleString) && TextUtils.isEmpty(authorString) &&
-                TextUtils.isEmpty(priceString) && TextUtils.isEmpty(quantityString) &&
-                TextUtils.isEmpty(supplierString) && TextUtils.isEmpty(numberString) &&
-                mType == BookEntry.BOOK_TYPE_UNKNOWN) {
-            // Since none were modified, return without creating new book.
-            // No need to create ContentValues and no need to do any provider operations.
-            return;
-        }
-
-        // Create ContentValues object where column names = keys
-        // Book attributes = values (from editor)
-        ContentValues values = new ContentValues();
-        values.put(BookEntry.COLUMN_BOOK_TITLE, titleString);
-        values.put(BookEntry.COLUMN_BOOK_AUTHOR, authorString);
-        // Integer.parseInt("1") --> 1 ex for ones converted to integers
-        double price = 0;
-        if (!TextUtils.isEmpty(priceString)) {
-            price = Double.parseDouble(priceString);
-        }
-        values.put(BookEntry.COLUMN_BOOK_PRICE, price);
-        values.put(BookEntry.COLUMN_BOOK_TYPE, mType);
-        values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantity);
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, supplierString);
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NUMBER, numberString);
-
-        // Determine if this is a new or existing book by checking if mCurrentBookUri
-        // is null or not
-        if (mCurrentBookUri == null) {
-            // This = NEW book. Insert new book into provider & return URI for it.
-            Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
-
-            // Show toast message if insertion was successful (or if it wasn't).
-            if (newUri == null) {
-                // If the URI is null, there's an insertion error.
-                Toast.makeText(this, getString(R.string.toast_fail),
-                        Toast.LENGTH_SHORT).show();
-            } else {
-                // Otherwise it was successful & we can display toast.
-                Toast.makeText(this, getString(R.string.toast_success),
-                        Toast.LENGTH_SHORT).show();
-            }
+        if (TextUtils.isEmpty(titleString) || TextUtils.isEmpty(authorString) || TextUtils.isEmpty(priceString)
+                || TextUtils.isEmpty(quantityString) || TextUtils.isEmpty(supplierString) || TextUtils.isEmpty(numberString)) {
+            Toast.makeText(this, R.string.toast_enter_all_fields, Toast.LENGTH_SHORT).show();
         } else {
-            // Otherwise this book EXITS so update book with content URI: mCurrentBookUri
-            // and pass in new ContentValues. Null for selection, selectionArgs since
-            // mCurrentBookUri will already id the correct row in DB we want to modify.
-            int rowsAffected = getContentResolver().update(mCurrentBookUri,
-                    values, null, null);
+            ContentValues values = new ContentValues();
+            values.put(BookEntry.COLUMN_BOOK_TITLE, titleString);
+            values.put(BookEntry.COLUMN_BOOK_AUTHOR, authorString);
+            /* Integer.parseInt("1") --> 1 ex for ones converted to integers
+            double price = 0;
+            if (!TextUtils.isEmpty(priceString)) {
+                price = Double.parseDouble(priceString);
+            } */
+            values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
+            values.put(BookEntry.COLUMN_BOOK_TYPE, mType);
+            values.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityString);
+            values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, supplierString);
+            values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NUMBER, numberString);
 
-            // Show toast if update was a success or not.
-            if (rowsAffected == 0) {
-                // If none were affected, there's an updating error.
-                Toast.makeText(this, getString(R.string.toast_fail),
-                        Toast.LENGTH_SHORT).show();
+            if (mCurrentBookUri == null) {
+                Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
+
+                showToast(newUri == null ? getString(R.string.toast_fail) :
+                        getString(R.string.toast_success));
             } else {
-                // Otherwise it was successful & we can show a toast.
-                Toast.makeText(this, getString(R.string.toast_success),
-                        Toast.LENGTH_SHORT).show();
+                int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null, null);
+
+                showToast(rowsAffected == 0 ? getString(R.string.update_fail) :
+                        getString(R.string.update_success));
             }
+
+            finish();
         }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     @Override

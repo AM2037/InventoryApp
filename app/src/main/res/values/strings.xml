@@ -99,6 +99,12 @@
     <!-- Toast if insertBook() was unsuccessful -->
     <string name="toast_fail">Error with saving book</string>
 
+    <!-- Toast message for when update is successful  -->
+    <string name="update_success">The book has been successfully updated.</string>
+
+    <!-- Toast message for when update is unsuccessful  -->
+    <string name="update_fail">Failed to update book.</string>
+
     <!-- Dialog message when user's leaving editor but hasn't saved changes [CHAR LIMIT=20] -->
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
 
@@ -107,6 +113,9 @@
 
     <!-- Dialog button text for option to keep editing [CHAR LIMIT=20] -->
     <string name="keep_editing">Keep Editing</string>
+
+    <!-- Toast message to appear when user tries to save a book without entering all of the information -->
+    <string name="toast_enter_all_fields">Please enter a value for each field before saving book.</string>
 
     <!-- Empty View title text -->
     <string name="empty_view_title_text">It\'s a bit lonely here…</string>
