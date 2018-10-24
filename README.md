@@ -20,13 +20,13 @@ well as contact the supplier by phone! Back in the main activity, there is also 
 all entries if they want to start over with a new inventory list.
 
 ## Screenshots of the UI:
-<img src="./InventoryUI1.png" alt="screenshot 1" width="170px"/> <img src="./InventoryUI2.png" alt="screenshot 2" width="170px"/>
-<img src="./InventoryUI3.png" alt="screenshot 3" width="170px"/> <img src="./InventoryUI4.png" alt="screenshot 4" width="170px"/>
-<img src="./InventoryUI5.png" alt="screenshot 5" width="170px"/> <img src="./InventoryUI6.png" alt="screenshot 6" width="170px"/>
-<img src="./InventoryUI7.png" alt="screenshot 7" width="170px"/> <img src="./InventoryUI8.png" alt="screenshot 8" width="170px"/>
+[![Inventory-UI1.png](https://i.postimg.cc/BnCQ8LmV/Inventory-UI1.png)](https://postimg.cc/RWNzyF57) [![Inventory-UI2.png](https://i.postimg.cc/jqJxHk8N/Inventory-UI2.png)](https://postimg.cc/JtMCmKC4)
+[![Inventory-UI3.png](https://i.postimg.cc/VN61d7rJ/Inventory-UI3.png)](https://postimg.cc/yDw2GyTK) [![Inventory-UI4.png](https://i.postimg.cc/3RTs2nWj/Inventory-UI4.png)](https://postimg.cc/TytN6jVh)
+[![Inventory-UI5.png](https://i.postimg.cc/d3zmTSVw/Inventory-UI5.png)](https://postimg.cc/rRNtBj4P) [![Inventory-UI6.png](https://i.postimg.cc/dVRmL6Pc/Inventory-UI6.png)](https://postimg.cc/nXzQWvh3)
+[![Inventory-UI7.png](https://i.postimg.cc/DfWNm9CV/Inventory-UI7.png)](https://postimg.cc/Cdg7QQTJ) [![Inventory-UI8.png](https://i.postimg.cc/qvQw1wmX/Inventory-UI8.png)](https://postimg.cc/zybTBCYV)
 
 ## About the Code
-that uses a ContentProvider, defined in BookProvider.java, to communicate with a SQLite
+This app uses a ContentProvider, defined in BookProvider.java, to communicate with a SQLite
 database via the Content URI. As seen in the hierarchy of my application file tree, I separated
 out the data components that the database actually pulls from and the components that work
 to read and manipulate that data. Inside the data directory you will find the contract where
