@@ -36,9 +36,9 @@ and parses the data which is then passed back into my activities and displayed i
 view.
 
 ## Resources: Images and items
-Most of my icons were downloaded from [Material Design] (https://material.io/tools/icons/?style=baseline).
-The photo on my Empty View screen (when there is no data) is from [pngtree] (https://pngtree.com/freepng/vector-bookstore_2052400.html).
-I used [Amazon] (https://www.amazon.com/Magicians-Novel-Trilogy/dp/0452296293) for my dummy data book!
+Most of my icons were downloaded from [Material Design](https://material.io/tools/icons/?style=baseline).
+The photo on my Empty View screen (when there is no data) is from [pngtree](https://pngtree.com/freepng/vector-bookstore_2052400.html).
+I used [Amazon](https://www.amazon.com/Magicians-Novel-Trilogy/dp/0452296293) for my dummy data book!
 
 
 ## More to come
