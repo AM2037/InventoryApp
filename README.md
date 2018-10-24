@@ -20,10 +20,10 @@ well as contact the supplier by phone! Back in the main activity, there is also 
 all entries if they want to start over with a new inventory list.
 
 ## Screenshots of the UI:
-[![Inventory-UI1.png](https://i.postimg.cc/BnCQ8LmV/Inventory-UI1.png)](https://postimg.cc/RWNzyF57) [![Inventory-UI2.png](https://i.postimg.cc/jqJxHk8N/Inventory-UI2.png)](https://postimg.cc/JtMCmKC4)
-[![Inventory-UI3.png](https://i.postimg.cc/VN61d7rJ/Inventory-UI3.png)](https://postimg.cc/yDw2GyTK) [![Inventory-UI4.png](https://i.postimg.cc/3RTs2nWj/Inventory-UI4.png)](https://postimg.cc/TytN6jVh)
-[![Inventory-UI5.png](https://i.postimg.cc/d3zmTSVw/Inventory-UI5.png)](https://postimg.cc/rRNtBj4P) [![Inventory-UI6.png](https://i.postimg.cc/dVRmL6Pc/Inventory-UI6.png)](https://postimg.cc/nXzQWvh3)
-[![Inventory-UI7.png](https://i.postimg.cc/DfWNm9CV/Inventory-UI7.png)](https://postimg.cc/Cdg7QQTJ) [![Inventory-UI8.png](https://i.postimg.cc/qvQw1wmX/Inventory-UI8.png)](https://postimg.cc/zybTBCYV)
+[![Inventory-UI1.png](https://i.postimg.cc/6pHS8BNX/Inventory-UI1.png)](https://postimg.cc/xXzg7DCx) [![Inventory-UI2.png](https://i.postimg.cc/65cbPBqv/Inventory-UI2.png)](https://postimg.cc/SJXG2FWS)
+[![Inventory-UI3.png](https://i.postimg.cc/qBLGJjrf/Inventory-UI3.png)](https://postimg.cc/vD4nX7DX) [![Inventory-UI4.png](https://i.postimg.cc/SKF97M47/Inventory-UI4.png)](https://postimg.cc/mPjhThtt)
+[![Inventory-UI5.png](https://i.postimg.cc/DzTWb3Qx/Inventory-UI5.png)](https://postimg.cc/TKt2ZS4b) [![Inventory-UI6.png](https://i.postimg.cc/GmktRS0G/Inventory-UI6.png)](https://postimg.cc/CRxSH7xx)
+[![Inventory-UI7.png](https://i.postimg.cc/1tY5Bk6h/Inventory-UI7.png)](https://postimg.cc/5YLVNknn) [![Inventory-UI8.png](https://i.postimg.cc/CxHhXBD4/Inventory-UI8.png)](https://postimg.cc/MnHJjG9c)
 
 ## About the Code
 This app uses a ContentProvider, defined in BookProvider.java, to communicate with a SQLite
