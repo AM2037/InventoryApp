@@ -1,59 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="@dimen/activity_margin">
+    android:layout_height="wrap_content">
 
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_left"
         android:fontFamily="sans-serif-medium"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#2B3D4D"
-        tools:targetApi="jelly_bean"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@id/stock"
-        android:layout_toStartOf="@id/stock"
-        android:layout_alignParentStart="true" />
+        android:textColor="@color/titleColor"
+        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="jelly_bean" />
 
 
     <TextView
         android:id="@+id/summary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
         android:fontFamily="sans-serif"
         android:textAppearance="?android:textAppearanceSmall"
-        android:textColor="#AEB6BD"
+        android:textColor="@color/summaryColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         tools:targetApi="jelly_bean" />
 
     <TextView
         android:id="@+id/stock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/quantity"
-        android:layout_toStartOf="@id/quantity"
+        android:layout_marginRight="@dimen/margin"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        android:fontFamily="sans-serif"
         android:text="@string/quantity_view"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="@android:color/black"
-        android:fontFamily="sans-serif"
-        tools:targetApi="jelly_bean" />
+        app:layout_constraintEnd_toStartOf="@+id/quantity"
+        app:layout_constraintLeft_toRightOf="@id/title"
+        tools:targetApi="jelly_bean"
+        android:layout_marginEnd="@dimen/margin" />
 
     <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:text="@string/quantity"
-        android:paddingLeft="@dimen/padding"
-        android:paddingStart="@dimen/padding"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="@android:color/black"
-        android:layout_alignParentEnd="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/stock"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="RtlSymmetry" />
 
 
@@ -61,42 +69,44 @@
         android:id="@+id/cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/quantity"
-        android:layout_toLeftOf="@id/quantity"
-        android:layout_toStartOf="@id/quantity"
-        android:paddingRight="@dimen/view_padding"
+        android:fontFamily="sans-serif"
+        android:layout_marginRight="@dimen/margin_cost"
         android:text="@string/cost"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="@android:color/black"
-        android:fontFamily="sans-serif"
-        tools:targetApi="jelly_bean"
-        tools:ignore="RtlHardcoded,RtlSymmetry" />
+        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        tools:ignore="RtlHardcoded,RtlSymmetry"
+        tools:targetApi="jelly_bean" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/quantity"
-        android:paddingLeft="@dimen/view_padding"
         android:textAppearance="?android:textAppearanceSmall"
-        android:textColor="#187313"
-        tools:targetApi="jelly_bean"
-        android:paddingStart="@dimen/view_padding"
-        tools:ignore="RtlHardcoded,RtlSymmetry" />
+        android:textColor="@color/priceColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        tools:ignore="RtlHardcoded,RtlSymmetry"
+        tools:targetApi="jelly_bean" />
 
     <Button
         android:id="@+id/sell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sell"
-        android:layout_below="@id/price"
-        android:layout_centerInParent="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
         android:focusable="false"
         android:fontFamily="sans-serif"
+        android:text="@string/sell"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/summary"
         tools:targetApi="jelly_bean" />
 
-</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

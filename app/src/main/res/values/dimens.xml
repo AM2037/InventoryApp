@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin around the floating action button in FullCatalogActivity -->
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin">16dp</dimen>
 
     <!-- Common margin value used throughout the app -->
     <dimen name="activity_margin">16dp</dimen>
@@ -18,4 +18,8 @@
     <!-- Quantity and sales dimens -->
     <dimen name="width_height">48dp</dimen>
     <dimen name="view_padding">20dp</dimen>
+    
+    <!-- Constraint list item dimens --> 
+    <dimen name="margin_left">135dp</dimen>
+    <dimen name="margin_cost">15dp</dimen>
 </resources>

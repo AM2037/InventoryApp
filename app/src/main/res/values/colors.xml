@@ -20,4 +20,9 @@
 
     <!-- Subtitle color for activity_catalog.xml -->
     <color name="subtitle_text">#A2AAB0</color>
+
+    <!-- List item colors -->
+    <color name="titleColor">#2B3D4D</color>
+    <color name="summaryColor">#AEB6BD</color>
+    <color name="priceColor">#187313</color>
 </resources>
