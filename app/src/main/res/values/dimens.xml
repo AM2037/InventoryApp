@@ -10,16 +10,23 @@
     <!-- Book type spinner -->
     <dimen name="spinner_height">48dp</dimen>
     <dimen name="spinner_padding">16dp</dimen>
+    <dimen name="spinner_margin">8dp</dimen>
 
     <!-- Catalog dimens -->
     <dimen name="padding">16dp</dimen>
+    <dimen name="fab_margin">12dp</dimen>
 
 
     <!-- Quantity and sales dimens -->
     <dimen name="width_height">48dp</dimen>
     <dimen name="view_padding">20dp</dimen>
     
-    <!-- Constraint list item dimens --> 
+    <!-- Constraint list item dimens -->
+    <dimen name="label_width">94dp</dimen>
+    <dimen name="edit_width">250dp</dimen>
     <dimen name="margin_left">135dp</dimen>
     <dimen name="margin_cost">15dp</dimen>
+    <dimen name="quantity_margin">12dp</dimen>
+    <dimen name="quantity_width">140dp</dimen>
+    <dimen name="editor_width">150dp</dimen>
 </resources>

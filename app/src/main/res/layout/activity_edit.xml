@@ -1,158 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Layout for the editor -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="@dimen/activity_margin"
     tools:context=".EditProductsActivity">
 
-    <!-- Book information category -->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Book Information Category Label -->
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/CategoryStyle"
+        android:layout_width="@dimen/label_width"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="@string/category_about"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Label -->
-        <TextView
-            style="@style/CategoryStyle"
-            android:text="@string/category_about" />
+    <!-- Title Input Field -->
+    <EditText
+        android:id="@+id/edit_book_title"
+        style="@style/EditorFieldStyle"
+        android:layout_width="@dimen/edit_width"
+        android:hint="@string/hint_book_title"
+        android:inputType="textCapWords"
+        app:layout_constraintLeft_toRightOf="@id/textView5"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill" />
 
-        <!-- Input fields -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/layout_padding"
-            android:paddingRight="@dimen/layout_padding">
+    <!-- Author Input Field -->
+    <EditText
+        android:id="@+id/edit_book_author"
+        style="@style/EditorFieldStyle"
+        android:layout_width="@dimen/edit_width"
+        android:hint="@string/hint_book_author"
+        android:inputType="textCapWords"
+        app:layout_constraintLeft_toRightOf="@id/textView5"
+        app:layout_constraintTop_toBottomOf="@id/edit_book_title"
+        tools:ignore="Autofill" />
 
-            <!-- Name field -->
-            <EditText
-                android:id="@+id/edit_book_title"
-                style="@style/EditorFieldStyle"
-                android:hint="@string/hint_book_title"
-                android:inputType="textCapWords"
-                tools:ignore="Autofill" />
+    <!-- Price Input Field -->
+    <EditText
+        android:id="@+id/edit_book_price"
+        style="@style/EditorFieldStyle"
+        android:layout_width="@dimen/edit_width"
+        android:hint="@string/hint_book_price"
+        android:inputType="numberDecimal"
+        app:layout_constraintLeft_toRightOf="@id/textView5"
+        app:layout_constraintTop_toBottomOf="@id/edit_book_author"
+        tools:ignore="Autofill" />
 
-            <!-- Breed field -->
-            <EditText
-                android:id="@+id/edit_book_author"
-                style="@style/EditorFieldStyle"
-                android:hint="@string/hint_book_author"
-                android:inputType="textCapWords"
-                tools:ignore="Autofill" />
 
-            <!-- Price field -->
-            <EditText
-                android:id="@+id/edit_book_price"
-                style="@style/EditorFieldStyle"
-                android:hint="@string/hint_book_price"
-                android:inputType="numberDecimal"
-                tools:ignore="Autofill" />
+    <!-- Type of Book Category Label -->
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/CategoryStyle"
+        android:layout_width="@dimen/label_width"
+        android:text="@string/category_type"
+        app:layout_constraintRight_toLeftOf="@id/spinner_type"
+        app:layout_constraintTop_toBottomOf="@id/edit_book_price" />
 
-        </LinearLayout>
-    </LinearLayout>
+    <!-- Input field -->
 
-    <!-- Book Type category -->
-    <LinearLayout
-        android:id="@+id/container_type"
-        android:layout_width="match_parent"
+
+    <!-- Book Type drop-down spinner -->
+    <Spinner
+        android:id="@+id/spinner_type"
+        android:layout_width="@dimen/editor_width"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="@dimen/spinner_margin"
+        android:paddingRight="@dimen/spinner_padding"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/textView6"
+        app:layout_constraintLeft_toRightOf="@id/textView6"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
-        <!-- Label -->
-        <TextView
-            style="@style/CategoryStyle"
-            android:text="@string/category_type" />
 
-        <!-- Input field -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical">
+    <!-- Stock Category Label -->
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/CategoryStyle"
+        android:layout_width="@dimen/label_width"
+        android:text="@string/category_stock"
+        app:layout_constraintRight_toLeftOf="@id/book_quantity"
+        app:layout_constraintTop_toBottomOf="@id/textView6" />
 
-            <!-- Book Type drop-down spinner -->
-            <Spinner
-                android:id="@+id/spinner_type"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/spinner_height"
-                android:paddingRight="@dimen/spinner_padding"
-                android:spinnerMode="dropdown"
-                tools:ignore="RtlHardcoded,RtlSymmetry" />
-        </LinearLayout>
-    </LinearLayout>
+    <!-- Quantity Input Field -->
+    <EditText
+        android:id="@+id/book_quantity"
+        style="@style/EditorFieldStyle"
+        android:layout_width="@dimen/quantity_width"
+        android:layout_marginTop="@dimen/quantity_margin"
+        android:hint="@string/quantity"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@id/textView7"
+        app:layout_constraintLeft_toRightOf="@id/textView7"
+        app:layout_constraintTop_toBottomOf="@id/spinner_type"
+        tools:ignore="Autofill" />
 
-    <!-- Stock category -->
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <!-- Decrease Quantity Button -->
+    <Button
+        android:id="@+id/decrease_quantity"
+        android:layout_width="@dimen/width_height"
+        android:layout_height="@dimen/width_height"
+        android:text="@string/decrement"
+        app:layout_constraintBottom_toBottomOf="@id/textView7"
+        app:layout_constraintLeft_toRightOf="@id/book_quantity"
+        app:layout_constraintRight_toLeftOf="@id/increase_quantity"
+        app:layout_constraintTop_toBottomOf="@id/spinner_type" />
+
+    <!-- Increase Quantity Button -->
+    <Button
+        android:id="@+id/increase_quantity"
+        android:layout_width="@dimen/width_height"
+        android:layout_height="@dimen/width_height"
+        android:text="@string/increment"
+        app:layout_constraintBottom_toBottomOf="@id/textView7"
+        app:layout_constraintLeft_toRightOf="@id/decrease_quantity"
+        app:layout_constraintTop_toBottomOf="@id/spinner_type" />
+
+    <!-- Information Category Label -->
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/CategoryStyle"
+        android:layout_width="@dimen/label_width"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="@string/category_information"
+        app:layout_constraintRight_toLeftOf="@id/edit_supplier_name"
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
 
-        <!-- Label -->
-        <TextView
-            style="@style/CategoryStyle"
-            android:text="@string/category_stock" />
+    <!-- Name of Supplier Input Field -->
+    <EditText
+        android:id="@+id/edit_supplier_name"
+        style="@style/EditorFieldStyle"
+        android:layout_width="@dimen/edit_width"
+        android:hint="@string/hint_supplier_name"
+        android:inputType="textCapWords"
+        app:layout_constraintBottom_toBottomOf="@id/textView8"
+        app:layout_constraintLeft_toRightOf="@id/textView8"
+        app:layout_constraintTop_toBottomOf="@id/book_quantity"
+        tools:ignore="Autofill" />
 
-        <EditText
-            android:id="@+id/book_quantity"
-            style="@style/EditorFieldStyle"
-            android:layout_marginStart="@dimen/padding"
-            android:layout_marginLeft="@dimen/padding"
-            android:hint="@string/quantity"
-            android:inputType="text"
-            tools:ignore="Autofill" />
-
-        <Button
-            android:id="@+id/decrease_quantity"
-            android:layout_width="@dimen/width_height"
-            android:layout_height="@dimen/width_height"
-            android:text="@string/decrement" />
-
-        <Button
-            android:id="@+id/increase_quantity"
-            android:layout_width="@dimen/width_height"
-            android:layout_height="@dimen/width_height"
-            android:text="@string/increment" />
-    </LinearLayout>
-
-    <!-- Information category -->
-    <LinearLayout
-        android:id="@+id/container_information"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <!-- Label -->
-        <TextView
-            style="@style/CategoryStyle"
-            android:text="@string/category_information" />
-
-        <!-- Input fields -->
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:paddingLeft="@dimen/layout_padding"
-            tools:ignore="RtlHardcoded,RtlSymmetry">
-
-
-            <EditText
-                android:id="@+id/edit_supplier_name"
-                style="@style/EditorFieldStyle"
-                android:hint="@string/hint_supplier_name"
-                android:inputType="textCapWords"
-                tools:ignore="Autofill" />
-
-            <EditText
-                android:id="@+id/edit_supplier_number"
-                style="@style/EditorFieldStyle"
-                android:layout_below="@+id/edit_supplier_name"
-                android:hint="@string/hint_supplier_number"
-                android:inputType="phone"
-                tools:ignore="Autofill" />
-
-        </RelativeLayout>
-    </LinearLayout>
-</LinearLayout>
+    <!-- Contact Supplier Input Field -->
+    <EditText
+        android:id="@+id/edit_supplier_number"
+        style="@style/EditorFieldStyle"
+        android:layout_width="@dimen/edit_width"
+        android:hint="@string/hint_supplier_number"
+        android:inputType="phone"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/textView8"
+        app:layout_constraintTop_toBottomOf="@id/edit_supplier_name"
+        tools:ignore="Autofill" />
+</android.support.constraint.ConstraintLayout>
